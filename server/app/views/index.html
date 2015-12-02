@@ -20,6 +20,8 @@
 <h1>Just a moment :)</h1>
 <!--     <navbar></navbar>
     <div id="main" ui-view></div> -->
+    <a id="redirect" href="#" class="btn btn-info">To the Quest!</a>
+
     <script type="text/javascript">
         var isAndroid = (navigator.userAgent.match(/android/i) != null);
         var isIOS = (navigator.userAgent.match(/iPhone/i) != null);
@@ -33,14 +35,16 @@
         var desiredRedirect = 'geoquest://_' + ns + '_' + room;
         var androidIntent = '_' + ns + '_' + room;
 
-        // If it's not an universal app, use IS_IPAD or IS_IPHONE
-        if (isIOS) {
-            window.location = desiredRedirect; 
-        } else if (isAndroid) {
-            // Instead of using the actual URL scheme, use 'intent://' for better UX
-            window.location = 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;';
-        }
+        // attach custom url as an href to link
+        $('#redirect').$("a").prop("href", desiredRedirect);
 
+        // If it's not an universal app, use IS_IPAD or IS_IPHONE
+        // if (isIOS) {
+        //     window.location = desiredRedirect; 
+        // } else if (isAndroid) {
+        //     // Instead of using the actual URL scheme, use 'intent://' for better UX
+        //     window.location = 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;';
+        // }
 
         // Build custom url link, and click link automatically
         // var link = document.createElement('a');
@@ -49,5 +53,7 @@
         // link.click(); 
 
     </script>
+    
+
 </body>
 </html>
