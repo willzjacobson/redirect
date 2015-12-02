@@ -4,6 +4,7 @@
     <base href="/" />
     <title>Fullstack Academy Generated Application</title>
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <script src="/lodash/index.js"></script>
     <script src="/angular/angular.js"></script>
@@ -15,14 +16,14 @@
     <script src="/main.js"></script>
 </head>
 <body ng-app="FullstackGeneratedApp">
+
+<h1>Just a moment :)</h1>
 <!--     <navbar></navbar>
     <div id="main" ui-view></div> -->
         <iframe src="geoquest://"> </iframe>
     <script type="text/javascript">
         var isAndroid = (navigator.userAgent.match(/android/i) != null);
         var isIOS = (navigator.userAgent.match(/iPhone/i) != null);
-        alert(isAndroid);
-        alert(isIOS);
 
         // Get namespace and room id's from current url.
         var url = window.location.href;
@@ -31,7 +32,15 @@
         var room = arr[2];
         console.log('ns', ns, 'room', room);
         var desiredRedirect = 'geoquest://_' + ns + '_' + room;
+        var androidIntent = '_' + ns + '_' + room;
 
+        // If it's not an universal app, use IS_IPAD or IS_IPHONE
+        if (isIOS) {
+            window.location = desiredRedirect; 
+        } else if (IS_ANDROID) {
+            // Instead of using the actual URL scheme, use 'intent://' for better UX
+            window.location = 'intent://' + androidIntent + '#Intent;package=my.app.id;scheme=geoquest;launchFlags=268435456;end;';
+        }
 
 
         // Build custom url link, and click link automatically
