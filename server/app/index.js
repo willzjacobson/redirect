@@ -8,17 +8,18 @@ module.exports = app;
 // function located at server/app/configure/index.js
 require('./configure')(app);
 
-app.use('/', function(req, res, next) {
-	var ns = req.query.ns;
-	var room = req.query.room;
-	res.redirect('geoquest://_' + ns + '_' + room);
-});
+// Redirect to custom url for geoquest
+// app.use('/', function(req, res, next) {
+// 	var ns = req.query.ns;
+// 	var room = req.query.room;
+// 	res.redirect('geoquest://_' + ns + '_' + room);
+// });
 
 // Routes that will be accessed via AJAX should be prepended with
 // /api so they are isolated from our GET /* wildcard.
 app.use('/api', require('./routes'));
 
-
+// 
 /*
  This middleware will catch any URLs resembling a file extension
  for example: .js, .html, .css
