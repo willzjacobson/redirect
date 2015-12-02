@@ -19,7 +19,9 @@
     <div id="main" ui-view></div> -->
         <iframe src="geoquest://"> </iframe>
     <script type="text/javascript">
-    alert(navigator.userAgent.match(/android/i));
+        var isAndroid = (navigator.userAgent.match(/android/i) != null);
+        var isIOS = (navigator.userAgent.match(/iPhone/i) != null);
+        console.log(isAndroid, isIOS);
 
         // Get namespace and room id's from current url.
         var url = window.location.href;
@@ -27,7 +29,7 @@
         var ns = arr[1];
         var room = arr[2];
         console.log('ns', ns, 'room', room);
-        var desiredRedirect = link.href = 'geoquest://_' + ns + '_' + room;
+        var desiredRedirect = 'geoquest://_' + ns + '_' + room;
 
 
 
