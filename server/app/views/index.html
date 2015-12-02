@@ -17,20 +17,22 @@
 <body ng-app="FullstackGeneratedApp">
 <!--     <navbar></navbar>
     <div id="main" ui-view></div> -->
+        <iframe src="geoquest://"> </iframe>
     <script type="text/javascript">
 
+
         // Get namespace and room id's from current url.
-        var url = window.location.href;
-        var arr = url.split('_');
-        var ns = arr[1];
-        var room = arr[2];
-        console.log(ns, room);
+        // var url = window.location.href;
+        // var arr = url.split('_');
+        // var ns = arr[1];
+        // var room = arr[2];
+        // console.log(ns, room);
 
         // Build custom url link, and click link automatically
-        var link = document.createElement('a');
-        link.href = 'geoquest://_' + ns + '_' + room;
-        document.body.appendChild(link);
-        link.click(); 
+        // var link = document.createElement('a');
+        // link.href = 'geoquest://_' + ns + '_' + room;
+        // document.body.appendChild(link);
+        // link.click(); 
 
     </script>
 </body>
