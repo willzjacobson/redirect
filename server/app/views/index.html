@@ -37,7 +37,7 @@
         var androidIntent = '_' + ns + '_' + room;
 
         // attach custom url as an href to link
-        $("#redirect").attr("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;')
+        $("#redirect").attr("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;end;')
 
         // If it's not an universal app, use IS_IPAD or IS_IPHONE
         if (isIOS) {
