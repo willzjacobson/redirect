@@ -38,6 +38,7 @@
 
         // attach custom url as an href to link
         if (isIOS) {
+            window.location = desiredRedirect;
             $("#redirect").attr("href", desiredRedirect);
         } else if (isAndroid) {
             // attach custom url as an href to link
