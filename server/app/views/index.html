@@ -37,14 +37,17 @@
         var androidIntent = '_' + ns + '_' + room;
 
         // attach custom url as an href to link
-        $('#redirect').prop("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;');
+        $("#redirect").attr("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;')
 
         // If it's not an universal app, use IS_IPAD or IS_IPHONE
-        // if (isIOS) {
-        //     window.location = desiredRedirect; 
-        // } else if (isAndroid) {
-        //     // Instead of using the actual URL scheme, use 'intent://' for better UX
-        //     window.location = 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;';
+        // function GO() {
+        //     if (isIOS) {
+        //         window.location = desiredRedirect; 
+        //     } else if (isAndroid) {
+        //         // Instead of using the actual URL scheme, use 'intent://' for better UX
+        //         window.location = 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;launchFlags=268435456;end;';
+        //     }
+            
         // }
 
         // Build custom url link, and click link automatically
