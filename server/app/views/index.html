@@ -24,26 +24,26 @@
     <a id="redirect" href="#" class="btn btn-info">To the Quest!</a>
 
     <script type="text/javascript">
-        var isAndroid = (navigator.userAgent.match(/android/i) != null);
-        var isIOS = (navigator.userAgent.match(/iPhone/i) != null);
+        // var isAndroid = (navigator.userAgent.match(/android/i) != null);
+        // var isIOS = (navigator.userAgent.match(/iPhone/i) != null);
 
-        // Get namespace and room id's from current url.
-        var url = window.location.href;
-        var arr = url.split('_');
-        var ns = arr[1];
-        var room = arr[2];
-        console.log('ns', ns, 'room', room);
-        var desiredRedirect = 'geoquest://_' + ns + '_' + room;
-        var androidIntent = '_' + ns + '_' + room;
+        // // Get namespace and room id's from current url.
+        // var url = window.location.href;
+        // var arr = url.split('_');
+        // var ns = arr[1];
+        // var room = arr[2];
+        // console.log('ns', ns, 'room', room);
+        // var desiredRedirect = 'geoquest://_' + ns + '_' + room;
+        // var androidIntent = '_' + ns + '_' + room;
 
-        // attach custom url as an href to link
-        if (isIOS) {
-            window.location = desiredRedirect;
-            $("#redirect").attr("href", desiredRedirect);
-        } else if (isAndroid) {
-            // attach custom url as an href to link
-            $("#redirect").attr("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;end;')
-        }
+        // // attach custom url as an href to link
+        // if (isIOS) {
+        //     window.location = desiredRedirect;
+        //     $("#redirect").attr("href", desiredRedirect);
+        // } else if (isAndroid) {
+        //     // attach custom url as an href to link
+        //     $("#redirect").attr("href", 'intent://' + androidIntent + '#Intent;package=com.example.Geoquest;scheme=geoquest;end;');
+        // }
 
         // document.getElementById('redirect').click();
 
